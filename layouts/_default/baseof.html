@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  {{- partial "head.html" . -}}
+
+  <body class="bg-light">
+
+
+    {{ block "main" . }} {{ end }}
+
+    {{- partial "footer.html" . -}}
+
+
+    <!-- Bootstrap Js -->
+    <script src="{{`js/bootstrap.bundle.min.js` | absURL}}"></script>   
+    <!-- Main Js -->
+    <script src="{{`js/main.js` | absURL}}"></script>
+
+  </body>
+
+</html>

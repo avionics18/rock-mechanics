@@ -1,0 +1,13 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{{ $title := .Site.Title }}
+	{{ if not .IsHome }}
+	{{ $title = printf "%s | %s" .Title .Site.Title }}
+	{{ end }}
+	<title>{{ $title }}</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{{`css/bootstrap.min.css` | absURL}}">
+	<link rel="stylesheet" href="{{`css/style.css` | absURL}}">
+	<link rel="stylesheet" href="{{`css/font-awesome.min.css` | absURL}}">
+</head>
