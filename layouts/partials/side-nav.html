@@ -1,0 +1,32 @@
+<!-- Banner -->
+<div id="side-nav-banner">
+	<div class="bg-warning p-3 my-3 text-center text-dark rounded shadow">
+		<h1 class="h3 font-weight-bold text-uppercase m-0">{{.Site.Title}}</h1>
+	</div>
+</div>
+
+<!-- Navigation -->
+<div id="sidebar-accordion" class="py-4">
+	<!-- Pages Navigation -->
+	<p class="text-center">
+		<a href="/" class="btn btn-outline-secondary btn-sm"><i class="fas fa-home"></i> Home</a>
+		<a href="/" class="btn btn-outline-secondary btn-sm">About</a>
+		<a href="/" class="btn btn-outline-secondary btn-sm">Contact</a>
+	</p>
+
+	{{- if .Site.Menus.main }}
+	{{- $currentPage := . }}
+	{{- range .Site.Menus.main }}
+	<div class="sidebar-menu-item-heading d-flex justify-content-between pt-3 mb-2 border-bottom border-secondary" data-toggle="collapse" data-target="#{{.URL}}">
+		<p class="text-white font-weight-bold {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}text-warning{{ end }}">{{.Name}}</p>
+		<p class="m-0 text-white ml-2"><i class="fas fa-caret-down"></i></p>
+	</div>
+	<ul class="sidebar-menu-item-content collapse {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}show{{ end }} list-unstyled mb-0 pl-3" id="{{.URL}}" data-parent="#sidebar-accordion">
+		{{range .Children}}
+			<li class="small {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}"><a href="{{.URL}}">{{.Name}}</a></li>
+		{{end}}
+	</ul>
+	{{end}}
+	{{end}}
+
+</div>

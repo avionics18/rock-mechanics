@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-  {{- partial "head.html" . -}}
+  {{ partial "head.html" . }}
 
-  <body class="bg-light">
+  <body>
 
-
-    {{ block "main" . }} {{ end }}
-
-    {{- partial "footer.html" . -}}
+    {{if .IsHome}}
+    	{{ partial "header.html" . }}
+      {{ block "main" . }} {{ end }}
+    {{else}}
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-4 bg-dark vh-100 overflow-auto">
+            {{ partial "side-nav.html" . }}
+          </div>
+          <div class="col-lg-9 col-md-8 bg-light vh-100 overflow-auto">
+            <div class="py-4 px-md-5 px-3">
+              {{ block "main" . }} {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {{end}}
 
 
     <!-- Bootstrap Js -->
+    <script src="{{`js/jquery.min.js` | absURL}}"></script>   
     <script src="{{`js/bootstrap.bundle.min.js` | absURL}}"></script>   
     <!-- Main Js -->
     <script src="{{`js/main.js` | absURL}}"></script>

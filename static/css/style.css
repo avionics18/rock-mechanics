@@ -1,0 +1,15 @@
+.sidebar-menu-item-heading > p{
+	margin-bottom: 0;
+}
+ul.sidebar-menu-item-content a{
+    text-decoration: none;
+    color: #bbb;
+    transition: 0.25s;
+}
+ul.sidebar-menu-item-content a:hover{
+    color: var(--warning);
+}
+ul.sidebar-menu-item-content li.active a{
+	color: var(--warning);
+	font-weight: bold;
+}
