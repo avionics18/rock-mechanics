@@ -7,12 +7,12 @@
 		<hr>
 		<!-- MY CONTENTS ROW -->
 		<div class="row">
-		  {{range .Pages.Reverse}}
+		  {{range .Pages}}
 		  <div class="col-md-6 mb-3">
 		    <div class="card h-100 shadow-sm border-0 rounded-lg">
 		      <div class="card-body">
-		      	<p class="m-0 font-weight-bold mb-2">{{.Title}}</p>
-		      	<p class="text-secondary small">{{.Summary}}</p>
+		      	<p class="m-0 text-dark font-weight-bold mb-2">{{.Title}}</p>
+		      	<p class="text-secondary small m-0">{{.Summary}}</p>
 		      </div>
 		    </div>
 		  </div>
