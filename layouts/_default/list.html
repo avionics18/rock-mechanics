@@ -1,16 +1,18 @@
 {{define "main"}}
 	<h1>{{.Title}}.</h1>
-	<p class="text-secondary font-weight-bold">Folder - {{.RelPermalink}}</p>
 	<hr>
-	<div>
-		<h4>Contents:</h4>
+	<p>{{.Content}}</p>
+	<div class="p-4 mt-5" style="background-color: #ececec;">
+		<h5 class="font-weight-bold text-uppercase text-secondary"><i class="fas fa-sitemap mr-2"></i>Contents:</h5>
+		<hr>
 		<!-- MY CONTENTS ROW -->
 		<div class="row">
 		  {{range .Pages.Reverse}}
-		  <div class="col-md-4 mb-3">
+		  <div class="col-md-6 mb-3">
 		    <div class="card h-100 shadow-sm border-0 rounded-lg">
 		      <div class="card-body">
-		      	<p class="m-0"><a class="text-info" href="{{.Permalink}}">{{.Title}}</a></p>
+		      	<p class="m-0 font-weight-bold mb-2">{{.Title}}</p>
+		      	<p class="text-secondary small">{{.Summary}}</p>
 		      </div>
 		    </div>
 		  </div>
@@ -18,5 +20,4 @@
 		</div>
 		<!-- MY CONTENTS ROW -->
 	</div>
-	<p>{{.Content}}</p>
 {{end}}

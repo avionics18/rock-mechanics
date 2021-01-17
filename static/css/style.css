@@ -1,3 +1,12 @@
+#side-nav-wrapper,
+#main-content-wrapper{
+	height: 100vh;
+	overflow: auto;
+}
+
+#bars-menu-icon{
+	display: none;
+}
 /*Side-Nav Styling*/
 .menu{
 	background: #2c3135;
@@ -33,4 +42,54 @@
 .sub-menu .sub-menu-items a:hover,
 .sub-menu .sub-menu-items.active a{
 	color: var(--warning);
+}
+
+
+
+
+
+/*-----------------------------------------*/
+/*     RESPONSIVE DESIGN STARTS HERE
+/*-----------------------------------------*/
+@media screen and (max-width: 768.98px){
+	#main-content-wrapper{
+		height: initial;
+		overflow: initial;
+		border-top: 5px solid var(--warning);
+	}
+	#side-nav-wrapper{
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1500;
+		animation: fadeIn 0.25s;
+	}
+	@keyframes fadeIn{
+		from{
+			opacity: 0;
+		}
+		to{
+			opacity: 1;
+		}
+	}
+	#bars-menu-icon.open{
+		display: block;
+		width: 60px;
+		height: 60px;
+		background: var(--warning);
+		border: 2px solid #000;
+		border-radius: 100%;
+		outline: none;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		z-index: 2000;
+		transition: 0.25s;
+	}
+	#bars-menu-icon.close{
+		color: #fff;
+		background-color: var(--danger);
+		border-color: #fff;
+	}
 }

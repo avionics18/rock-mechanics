@@ -10,11 +10,13 @@
       {{ block "main" . }} {{ end }}
     {{else}}
       <div class="container-fluid">
+        <!-- Hamberger Menu Icon -->
+        <button id="bars-menu-icon" class="open"><i class="fa fa-bars fa-2x"></i></button>
         <div class="row">
-          <div class="col-lg-3 col-md-4 bg-dark vh-100 overflow-auto">
+          <div id="side-nav-wrapper" class="col-lg-3 col-md-4 bg-dark">
             {{ partial "side-nav.html" . }}
           </div>
-          <div class="col-lg-9 col-md-8 bg-light vh-100 overflow-auto">
+          <div id="main-content-wrapper" class="col-lg-9 col-md-8 bg-light">
             <div class="py-4 px-md-5 px-3">
               {{ block "main" . }} {{ end }}
             </div>
